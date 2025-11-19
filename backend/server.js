@@ -6,7 +6,10 @@ const Link = require('./models/Link');
 const linksRouter = require('./routes/links');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "*",   // Allow all for now
+  methods: ["GET", "POST"],
+}));
 app.use(express.json());
 
 // Health check
