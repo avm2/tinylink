@@ -6,17 +6,7 @@ const Link = require('./models/Link');
 const linksRouter = require('./routes/links');
 
 const app = express();
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://tinylink-frontend.netlify.app",
-    ],
-    methods: ["GET", "POST"],
-    credentials: false,
-  })
-);
-
+app.use(cors());
 app.use(express.json());
 
 // Health check
